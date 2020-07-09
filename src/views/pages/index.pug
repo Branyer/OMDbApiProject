@@ -3,6 +3,16 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
+        title OMDB Cine
+        link(rel="stylesheet", href="./css/styles.css" type="text/css")
     body
-        
+        div.container
+            form.form(name="login")
+                div.box 
+                    label.label(for="user") USER NAME:
+                    input(type="text" id="user" require)
+                div.box
+                    label.label(for="pass") PASSWORD:
+                    input(type="password" id="pass" require)
+                a(href="#" id='submit') SEND
+        script(src="./js/index.js" type="text/javascript")
