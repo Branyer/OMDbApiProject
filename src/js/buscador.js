@@ -63,10 +63,10 @@ const apiRequest = () =>{
 
      borrarPeliculas();
 
-    fetch(`http://www.omdbapi.com/?s=${peliculaABuscar.value}&apikey=${apiKey}`)
+    fetch(`https://www.omdbapi.com/?s=${peliculaABuscar.value}&apikey=${apiKey}`)
         .then((resp) => {
             return resp.json();
-        })
+        }) 
         .then(({ Search }) => {
             auxSearch = Search;
             for(let key in Search ){
