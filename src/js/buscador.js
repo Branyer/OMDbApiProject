@@ -171,9 +171,7 @@ if(sessionStorage.length > 0) {
    user = getUsuario();
    titulo.innerHTML += user.nombre + "!";
 
-} else {
-    window.location = 'index.html';
-}
+} 
 
 
  
