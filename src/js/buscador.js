@@ -166,7 +166,7 @@ const getUsuario = () => {
          }
 }
 
-if(sessionStorage.length === 2) {
+if(sessionStorage.length > 0) {
     
    user = getUsuario();
    titulo.innerHTML += user.nombre + "!";
