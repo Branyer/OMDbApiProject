@@ -1,4 +1,4 @@
-
+//PAGINA DE INICIO
 const boton = document.getElementById('submit');
 
 const getData = () => {
@@ -18,7 +18,7 @@ const getData = () => {
             const user_string = JSON.stringify(obj_usuario);
             const keyUser = `user${cantUsers}`;
             localStorage.setItem(keyUser , user_string);
-            sessionStorage.setItem(keyUser , user_string); 
+            sessionStorage.setItem(keyUser , user_string);
         }
          
     }
@@ -39,7 +39,7 @@ const existeUsuario = (obj_usuario) => {
             }
         }
     }
-    
+
     return false;
 }
 
@@ -49,4 +49,7 @@ const cleanStorage = () => {
         localStorage.removeItem(key);
 }
 
+
 boton.onclick = getData;
+
+
