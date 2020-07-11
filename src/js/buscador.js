@@ -176,7 +176,7 @@ if(sessionStorage.length > 0) {
 }
 
 
-
+ 
 boton.onclick = apiRequest;
 btnSalir.onclick = esconderVerMas;
 verFavoritos.onclick = MostrarFavoritos ;
