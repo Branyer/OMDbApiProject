@@ -10,9 +10,10 @@ const getData = () => {
         
         const obj_usuario = {
             'nombre' : user,
-            'contrasena' : pass
+            'contrasena' : pass,
+            'favoritos' : {} 
         }
-        console.log("xd");
+
         if(!existeUsuario(obj_usuario)){
             
             const user_string = JSON.stringify(obj_usuario);
@@ -43,12 +44,19 @@ const existeUsuario = (obj_usuario) => {
     return false;
 }
 
-const cleanStorage = () => {
+const cleanLocalStorage = () => {
 
     for(let key in localStorage)
         localStorage.removeItem(key);
 }
 
+const cleanSessionStorage = () => {
+
+    for(let key in sessionStorage)
+        sessionStorage.removeItem(key);
+}
+
+cleanSessionStorage(); 
 
 boton.onclick = getData;
 
