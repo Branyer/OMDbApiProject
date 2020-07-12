@@ -1,22 +1,22 @@
 //PAGINA DE INICIO
-const boton = document.getElementById('submit');
+const btnSubmit = document.getElementById('submit');
 
 const getData = () => {
     const cantUsers = localStorage.length;
     const user = document.getElementById('user').value.toUpperCase();
     const pass = document.getElementById('pass').value;
-    console.log("xd");
+
     if( user && pass ) { //si los valores no estan vacios 
         
-        const obj_usuario = {
+        const objUser = {
             'nombre' : user,
             'contrasena' : pass,
             'favoritos' : {} 
         }
 
-        if(!existeUsuario(obj_usuario)){
+        if(!existeUsuario(objUser)){
             
-            const user_string = JSON.stringify(obj_usuario);
+            const user_string = JSON.stringify(objUser);
             const keyUser = `user${cantUsers}`;
             localStorage.setItem(keyUser , user_string);
             sessionStorage.setItem(keyUser , user_string);
@@ -26,7 +26,7 @@ const getData = () => {
 }
 
 
-const existeUsuario = (obj_usuario) => {
+const existeUsuario = (objUser) => {
 
     for(let key in localStorage){
         
@@ -34,7 +34,7 @@ const existeUsuario = (obj_usuario) => {
 
             const aux_user = JSON.parse(localStorage[key]);
 
-            if(aux_user.nombre === obj_usuario.nombre && aux_user.contrasena === obj_usuario.contrasena ){
+            if(aux_user.nombre === objUser.nombre && aux_user.contrasena === objUser.contrasena ){
                 sessionStorage.setItem(key, localStorage[key]);
                 return true;
             }
@@ -58,6 +58,6 @@ const cleanSessionStorage = () => {
 
 cleanSessionStorage(); 
 
-boton.onclick = getData;
+btnSubmit.addEventListener('click', getData );
 
 
