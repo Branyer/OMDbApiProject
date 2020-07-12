@@ -116,7 +116,7 @@ const verMas = (e) => {
 }
 
 const addFavorite = (e) => {
-   
+    console.log(e); 
     const btnFavorito = e.target.parentNode;
     const keyMovie = getPath(e.target).id;
     const pelicula = inShowFavorite ? objUser.favoritos[keyMovie] : resultadoBusqueda[keyMovie];
@@ -130,7 +130,7 @@ const addFavorite = (e) => {
         btnFavorito.style.backgroundColor = 'white';
         btnFavorito.setAttribute('title', 'add to favorites');
 
-        if(inShowFavorite) ctnResultado.removeChild((e.path[3]));
+        if(inShowFavorite) ctnResultado.removeChild(getPath(e.target));
         delete objUser.favoritos[pelicula.imdbID]; 
     }
 
