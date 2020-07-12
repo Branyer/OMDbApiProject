@@ -29,6 +29,7 @@ const MostrarFavoritos = () => {
 }
 
 const verMas = (e) => {
+    console.log(e.path);
     black.style.opacity = '1';
     black.style.zIndex = '300';
     const key = e.path[1].id;
@@ -61,6 +62,7 @@ const verMas = (e) => {
 }
 
 const addFavorite = (e) => {
+    console.log(e.path);
     const btnFavorito = e.path[1];
     console.log(e.path[3]);
     const keyMovie = e.path[3].id;
